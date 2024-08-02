@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>Title</title>
+{% endblock %}
+{% block content %}
+<table class=" table table-dark">
+    <thead>
+    <tr>
+        <th>Voter_id</th>
+        <th>First_name</th>
+        <th>Last_name</th>
+        <th>Gender</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>PinCode</th>
+        <th>Date_OF_Birth</th>
+        <th>Contact</th>
+        <th>About</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in obj %}
+    <tr>
+        <td>{{i.voter_id}}</td>
+        <td>{{i.first_name}}</td>
+        <td>{{i.last_name}}</td>
+        <td>{{i.gender}}</td>
+        <td>{{i.address}}</td>
+        <td>{{i.city}}</td>
+        <td>{{i.state}}</td>
+        <td>{{i.pincode}}</td>
+        <td>{{i.dob}}</td>
+        <td>{{i.contact}}</td>
+        <td>
+            <a href="/a1/uv/{{i.voter_id}}/"><button class="btn btn-warning">Update</button></a>
+            <a href="/a1/dv/{{i.voter_id}}/"><button class=" btn btn-danger">Delete</button></a>
+        </td>
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
